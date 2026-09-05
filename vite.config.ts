@@ -15,4 +15,8 @@ export default defineConfig({
   server: {
     port: 5173,
   },
+  build: {
+    // Never ship source maps to production — they expose original source.
+    sourcemap: false,
+  },
 })

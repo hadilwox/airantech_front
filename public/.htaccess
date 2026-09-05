@@ -1,0 +1,13 @@
+# Vue Router history-mode SPA fallback for Apache/cPanel hosting.
+# Serves index.html for any request that isn't a real file or directory,
+# so deep links like /students or /courses/5 don't 404 on refresh.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    RewriteRule ^ index.html [L]
+</IfModule>

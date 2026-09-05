@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Environment overrides — .env (dev default, no secrets) stays tracked;
+# production/local overrides must never be committed.
+.env.production
+.env.production.local
+.env.*.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
